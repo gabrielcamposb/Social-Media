@@ -1,13 +1,14 @@
 @charset "UTF-8";
 
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 html, body {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -21,42 +22,55 @@ body {
 main {
     height: 100vh;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #phone {
     height: 627px;
     width: 311px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: url(images/iphone-frame.png);
-    background-repeat: no-repeat;
+    position: relative;
+    background: url(images/iphone-frame.png) no-repeat center center;
+    background-size: cover;
 }
 
 #screen {
-    position: relative;
-    top: 80px;
-    left: 22px;
-    width: 267px;
-    height: 471px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    overflow-y: scroll;
 }
 
 #socialMedia {
-    text-align: right;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 10px;
 }
 
-#socialMedia img{
-    width: 50px;
-    margin: 10px;
+#socialMedia a {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    font-weight: bolder;
+    text-decoration: none;
+    color: white;
+    background-color: #7289da;
+    margin-bottom: 10px;
     border-radius: 50%;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.400);
-    box-sizing: border-box;
 }
 
-img:hover {
-    border: 2px solid rgba(255, 255, 255, 0.638);
+#socialMedia img {
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, border 0.3s;
+}
+
+#socialMedia img:hover {
     transform: translate(-2px, -2px);
+    border: 2px solid rgba(255, 255, 255, 0.638);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.633);
-    transition: transform 0.5s, border 0.2s;
 }
